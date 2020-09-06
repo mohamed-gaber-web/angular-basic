@@ -1,0 +1,33 @@
+.header {
+  background-color: #308fe9;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: "Berlin Sans FB";
+  color: #fff ;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.menu ul li a{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Arial;
+  cursor: pointer;
+}
+
+.active {
+  color: aqua!important;
+}

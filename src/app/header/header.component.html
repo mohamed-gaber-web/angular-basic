@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="logo col-md-4"> Angular App Basic </div>
+      <div class="menu col-md-8">
+        <ul>
+          <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/']"> Home </a></li>
+          <li><a [routerLinkActive]="['active']" [routerLink]="['users', 1]"> Users </a></li>
+          <li><a [routerLinkActive]="['active']" [routerLink]="['services']"> Services </a></li>
+          <li><a [routerLinkActive]="['active']" [routerLink]="['allServers']"> All Server </a></li>
+          <li><a href=""> Contact Us </a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

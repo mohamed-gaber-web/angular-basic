@@ -1,0 +1,19 @@
+/// queryParams
+
+1- localhost:4200/users?name=ahmed&age=20
+2- ?name=ahmed&age=20 [ QueryParams ]
+
+/// Grouping Routing
+
+{ path: '/users', component: UsersComponent, children: [
+  { path: ':id', component: UsersComponent},
+  { path: 'edit/:id', component: UsersComponent}
+] }
+
+{ path: 'anything', redirectTo: '/not-found' },
+{ path: '**', component: NotFoundComponent }
+redirectTo: path
+
+/// Create App Routing Module External
+create file module child and import to parent module
+
