@@ -1,0 +1,36 @@
+angular provides tow approaches : -
+    -- reactive form [sync]
+    -- template-driven [async]
+
+
+    - fromControl [ value - validation ] 
+    - formGroup [ value and status but for group from from Control ] 
+    - formArray [ [ value and status but for array from from Control ] ] - ControlValueAccessor  
+
+
+    -- import FormsModule in app.module
+    -- import FormControl from @angular/forms
+    -- FormGroup
+    -- import ReactiveFormsModule 
+    -- form group use FormGroup
+    -- form group nested form group formGroupName
+    -- field or input formControlName
+
+    --- update model data 
+        -- setValue()
+        -- patchValue({
+            prop: 'updateValue',
+            formGroup: {
+                prop: 'newValue'
+            }
+        })
+
+
+    -- FormBuilder
+        - control()
+        - group()
+        - array()
+
+
+    -- validation
+        - Validators [ required ]

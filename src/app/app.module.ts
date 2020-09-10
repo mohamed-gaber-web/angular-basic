@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerFormComponent } from './server-form/server-form.component';
@@ -15,6 +15,9 @@ import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app.routing.module';
+import { FormsComponent } from './forms/forms.component';
+import { FormsExp1Component } from './forms/forms-exp1/forms-exp1.component';
+
 
 
 
@@ -31,12 +34,15 @@ import {AppRoutingModule} from './app.routing.module';
     NotFoundComponent,
     HeaderComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    FormsComponent,
+    FormsExp1Component
   ],
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

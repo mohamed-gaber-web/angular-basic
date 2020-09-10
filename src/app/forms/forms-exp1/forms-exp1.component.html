@@ -1,0 +1,64 @@
+<h1> Form Example 1 </h1>
+<hr>
+
+<form [formGroup]='registerForm' (ngSubmit)="saveData()">
+    <div formGroupName="personalData">
+        <div class="form-group">
+            <label for="name"> name </label>
+            <input name="name" type="text" formControlName="name" id="name" class="form-control" required />
+
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+
+          <!-- <div *ngIf="name.errors.minlength">
+            Name must be at least 4 characters long.
+          </div> -->
+
+          <!-- <div *ngIf="name.errors.forbiddenName">
+            Name cannot be Bob.
+          </div> -->
+        </div>
+
+
+        </div>
+
+        <div class="form-group">
+            <label for="email"> email </label>
+            <input type="email" id="email" formControlName="email" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="phone"> phone </label>
+            <input type="number" formControlName="phone" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="country"> country </label>
+            <select class="form-control" id="country" formControlName='country' required>
+                <option [value]="item" *ngFor="let item of countries"> {{ item }} </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="notes"> notes </label>
+        <textarea type="text" formControlName="notes" id="notes" class="form-control"></textarea>    
+    </div>
+
+    <div class="form-group">
+        <label for="requestType"> request types </label>
+        <select class="form-control" id="requestType" formControlName='requestTypes'>
+            <option [value]="item" *ngFor="let item of requestTypes"> {{ item }} </option>
+        </select>
+    </div>
+
+    <button 
+        type="submit" 
+        class="btn btn-info"
+        [disabled]="registerForm.pristine" 
+    > Save Data </button>
+</form>
