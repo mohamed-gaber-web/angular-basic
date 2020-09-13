@@ -1,0 +1,63 @@
+<h1> Template Driven Form</h1>
+
+<form (ngSubmit)="saveData(f)" #f="ngForm">
+    
+    <!-- Create group  -->
+
+    <div ngModelGroup="group-data">
+        <div class="form-group">
+            <label for="fullname"> Fullname </label>
+            <input type="text" name="fullname" class="form-control" id="fullname" ngModel required #fullname='ngModel'>
+            <span class="help-block" *ngIf='!fullname.valid && fullname.touched'> fullname is required </span>
+    
+        </div>
+    
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="text" name="email" class="form-control" id="email" ngModel required email #email="ngModel">
+            <span class="help-block" *ngIf='!email.valid && email.touched'> please enter a valid email </span>
+        </div>
+    
+    </div>
+
+    <div class="form-group">
+        <label for="phone"> Phone </label>
+        <input type="text" name="phone" class="form-control" id="phone" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="country"> Country </label>
+       <select name="country" id="country" class="form-control" [ngModel]="countries[0]">
+           <option [value]="country" *ngFor='let country of countries'> {{ country }} </option>
+       </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message"> Message </label>
+        <textarea
+            name="message" 
+            id="message"
+            class="form-control"
+            [(ngModel)]="answer"
+            [ngModelOptions]="{standalone: false}"
+            >
+        </textarea>
+        <p> {{ answer }} </p>
+    </div>
+
+
+    <div class="form-group"  *ngFor='let gender of genders'>
+        <label [for]="gender">
+            <input 
+                type="radio" 
+                [value]="gender" 
+                name="gender" 
+                ngModel >
+
+            {{ gender }}
+        </label>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid"> Save data </button>
+</form>

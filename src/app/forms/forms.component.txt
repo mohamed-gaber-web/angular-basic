@@ -34,3 +34,10 @@ angular provides tow approaches : -
 
     -- validation
         - Validators [ required ]
+
+
+    -- driven-template
+        -- ngModel
+        -- ngForm
+        -- validation 
+        -- ngModelGroup => create group from input

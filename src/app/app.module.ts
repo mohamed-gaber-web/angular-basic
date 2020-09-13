@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app.routing.module';
 import { FormsComponent } from './forms/forms.component';
 import { FormsExp1Component } from './forms/forms-exp1/forms-exp1.component';
+import { DrivenTemplateComponent } from './forms/driven-template/driven-template.component';
+
 
 
 
@@ -36,7 +38,8 @@ import { FormsExp1Component } from './forms/forms-exp1/forms-exp1.component';
     ContactComponent,
     HomeComponent,
     FormsComponent,
-    FormsExp1Component
+    FormsExp1Component,
+    DrivenTemplateComponent
   ],
     imports: [
         BrowserModule,
