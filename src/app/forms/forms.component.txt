@@ -41,3 +41,4 @@ angular provides tow approaches : -
         -- ngForm
         -- validation 
         -- ngModelGroup => create group from input
+        -- setValue or ptachValue

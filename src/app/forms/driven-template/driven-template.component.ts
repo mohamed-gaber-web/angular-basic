@@ -17,6 +17,22 @@ export class DrivenTemplateComponent {
     saveData(form: NgForm) {
         console.log(this.signUpForm);
         // console.log(form);
-        
+    }
+
+    updateData() {
+        // updated value form
+
+        this.signUpForm.form.patchValue({ // setValue() or patchValue()
+            groupData: {
+                fullname: "updatedFullName",
+                email: "ahmed@gaber.com"
+            },
+
+            phone: "updatedPhone",
+            country: "USA",
+            message: 'updated message',
+            gender: "male"
+
+        })
     }
 }

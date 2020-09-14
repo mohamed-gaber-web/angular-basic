@@ -4,7 +4,7 @@
     
     <!-- Create group  -->
 
-    <div ngModelGroup="group-data">
+    <div ngModelGroup="groupData">
         <div class="form-group">
             <label for="fullname"> Fullname </label>
             <input type="text" name="fullname" class="form-control" id="fullname" ngModel required #fullname='ngModel'>
@@ -52,6 +52,7 @@
                 type="radio" 
                 [value]="gender" 
                 name="gender" 
+                [id]="gender"
                 ngModel >
 
             {{ gender }}
@@ -60,4 +61,6 @@
     
 
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid"> Save data </button>
+    <button class="btn btn-primary ml-10" (click)="updateData()"> update data </button>
+
 </form>
