@@ -13,10 +13,30 @@ export class DrivenTemplateComponent {
     answer = "";
     countries = ['egypt', 'USA', 'Germany', 'England'];
     genders = ['male', 'female'];
+    selelcted = ['basic', 'advanced', 'Pro'];
 
-    saveData(form: NgForm) {
-        console.log(this.signUpForm);
-        // console.log(form);
+    sub = false;
+
+    userSubscription = {
+        email: '',
+        selectedSub: '',
+        password: ''
+    }
+
+    // saveData(form: NgForm) {
+    //     console.log(this.signUpForm);
+    //     // console.log(form);
+    // }
+
+    saveData() {
+        // console.log(this.signUpForm);
+
+        this.sub = true;
+        this.userSubscription.email = this.signUpForm.value.email;
+        this.userSubscription.selectedSub = this.signUpForm.value.selected;
+        this.userSubscription.password = this.signUpForm.value.pass;
+
+        this.signUpForm.reset();
     }
 
     updateData() {

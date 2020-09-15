@@ -1,10 +1,10 @@
-<h1> Template Driven Form</h1>
+<!-- <h1> Template Driven Form</h1> -->
 
-<form (ngSubmit)="saveData(f)" #f="ngForm">
+<!-- <form (ngSubmit)="saveData(f)" #f="ngForm"> -->
     
     <!-- Create group  -->
 
-    <div ngModelGroup="groupData">
+    <!-- <div ngModelGroup="groupData">
         <div class="form-group">
             <label for="fullname"> Fullname </label>
             <input type="text" name="fullname" class="form-control" id="fullname" ngModel required #fullname='ngModel'>
@@ -63,4 +63,52 @@
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid"> Save data </button>
     <button class="btn btn-primary ml-10" (click)="updateData()"> update data </button>
 
+</form> -->
+
+
+<hr >
+
+<h1> Subscribtion Form </h1>
+
+<form (ngSubmit)="saveData()" #f="ngForm">
+
+    <div class="form-group">
+        <label for="email"> Email Address </label>
+        <input 
+            type="email" 
+            class="form-control" 
+            name="email" 
+            email 
+            required 
+            ngModel 
+            #email="ngModel"
+            /> 
+            <span class="help-block" *ngIf="!email.valid && email.touched"> Email is Not Valid </span>
+    </div>
+
+    <div class="form-group">
+        <label for="selected"> Selected subscribtion </label>
+        <select class="form-control" name="selected" required #s="ngModel" [ngModel]="selelcted[0]">
+            <option [value]="sel" *ngFor="let sel of selelcted"> {{ sel }} </option>
+        </select> 
+        <span class="help-block" *ngIf="!s.valid && s.touched"> Selelct Subscription is required </span>
+    </div>
+
+    <div class="form-group">
+        <label for="pass"> password </label>
+        <input type="password" class="form-control" name="pass" required ngModel #pass="ngModel" /> 
+        <span class="help-block" *ngIf="!pass.valid && pass.touched"> password is required </span>
+    </div>
+
+    <button type="submit" class="btn btn-info" [disabled]='!f.valid'> Save Data </button>
 </form>
+
+<hr>
+
+<h1> User Subscription </h1>
+
+<div *ngIf='sub'>
+    <p> Email: {{ userSubscription.email }} </p>
+    <p> Email: {{ userSubscription.selectedSub }} </p>
+    <p> Email: {{ userSubscription.password }} </p>
+</div>
